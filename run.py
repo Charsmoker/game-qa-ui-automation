@@ -19,7 +19,7 @@ logger = logging.getLogger(__name__)
 
 def main():
     logging.basicConfig(
-        level=logging.INFO, 
+        level=logging.INFO,
         format="%(asctime)s [%(levelname)s] %(name)s:%(lineno)d %(message)s",
         )
     logger.info("开始执行商城购买冒烟。。。")
@@ -27,7 +27,7 @@ def main():
 
     auto_setup(__file__)
     try:
-        connect_mini_program("军棋")
+        hwnd = connect_mini_program("军棋")
         buy_in_mall()
         logger.info("冒烟通过，耗时 %.1fs", time.time() - start)
         return 0

@@ -10,9 +10,11 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+
 class WindowNotFoundError(Exception):
     """Raised when a window is not found."""
     pass
+
 
 def connect_mini_program(keyword="军棋", timeout=30):
     """
