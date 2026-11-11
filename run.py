@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
+# -*- encoding: utf-8 -*-
 
 # @FileName  :run.py
 # @Time      :2026/11/11 21:02:43
