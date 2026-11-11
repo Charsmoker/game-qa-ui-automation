@@ -29,7 +29,7 @@ def connect_mini_program(keyword="军棋", timeout=30):
         for hwnd in findwindows.find_windows(title_re=f".*{keyword}.*"):
             title = win32gui.GetWindowText(hwnd)
             
-            if keyword in title: 
+            if keyword in title:
                 logger.info("连接窗口: %s (hwnd=%s)", title, hwnd)
                 connect_device(f"Windows:///{hwnd}")
                 return hwnd

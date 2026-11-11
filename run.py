@@ -27,7 +27,7 @@ def main():
 
     auto_setup(__file__)
     try:
-        hwnd = connect_mini_program("军棋")
+        connect_mini_program("军棋")
         buy_in_mall()
         logger.info("冒烟通过，耗时 %.1fs", time.time() - start)
         return 0
