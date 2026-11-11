@@ -7,18 +7,19 @@
 
 
 import sys
+import logging
+import time
 from airtest.core.api import auto_setup
 from device import connect_mini_program
 from flow_mall import buy_in_mall
-import logging
-import time
+
 
 logger = logging.getLogger(__name__)
+
 
 def main():
     logging.basicConfig(
         level=logging.INFO, 
-        # format='%(asctime)s - %(levelname)s - %(message)s'
         format="%(asctime)s [%(levelname)s] %(name)s:%(lineno)d %(message)s",
         )
     logger.info("开始执行商城购买冒烟。。。")

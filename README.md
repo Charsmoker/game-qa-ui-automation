@@ -4,6 +4,8 @@
 
 ## 环境
 Python >= 3.11，Windows（依赖 pywinauto 找窗口）
+
+```powershell
 uv sync
 
 ## 运行

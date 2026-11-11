@@ -1,7 +1,7 @@
 [project]
 name = "uiautomation"
 version = "0.1.0"
-description = "Add your description here"
+description = "一个游戏的UI自动化脚本的相关依赖"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [

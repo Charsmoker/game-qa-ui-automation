@@ -15,7 +15,9 @@ class WindowNotFoundError(Exception):
     pass
 
 def connect_mini_program(keyword="军棋", timeout=30):
-    ## 函数内导入，避免非 Windows 环境导入失败
+    """
+    函数内导入，避免非 Windows 环境导入失败
+    """
     from pywinauto import findwindows
     import win32gui
     from airtest.core.api import connect_device
