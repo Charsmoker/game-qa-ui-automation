@@ -28,7 +28,7 @@ def connect_mini_program(keyword="军棋", timeout=30):
             if keyword in title: 
                 logger.info("连接窗口: %s (hwnd=%s)", title, hwnd)
                 connect_device(f"Windows:///{hwnd}")
-                return True
+                return hwnd
 
         time.sleep(1)  # 等待一秒后重试
     raise WindowNotFoundError(f"{timeout}s 内未找到标题含「{keyword}」的窗口")
