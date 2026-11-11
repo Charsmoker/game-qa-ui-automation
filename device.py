@@ -5,7 +5,8 @@
 # @Time      :2026/11/11 21:00:34
 # @Author    :Lucas
 
-import time,logging
+import time
+import logging
 
 logger = logging.getLogger(__name__)
 
@@ -30,4 +31,4 @@ def connect_mini_program(keyword="军棋", timeout=30):
                 return True
 
         time.sleep(1)  # 等待一秒后重试
-    raise WindowNotFoundError(f"未能找到符合条件的窗口: {keyword}, 请确保小程序已打开并且标题包含关键词。")
+    raise WindowNotFoundError(f"{timeout}s 内未找到标题含「{keyword}」的窗口")

@@ -27,10 +27,10 @@ def main():
     try:
         connect_mini_program("军棋")
         buy_in_mall()
-        logger.info(f"商城购买冒烟执行成功，耗时: {time.time()-start:.1f}秒")
+        logger.info("冒烟通过，耗时 %.1fs", time.time() - start)
         return 0
     except Exception:
-        logger.exception(f"冒烟失败, 耗时: {time.time()-start:.1f}秒")
+        logger.exception("冒烟失败, 耗时: %.1fs", time.time() - start)
         return 1
 
 if __name__ == "__main__":

@@ -14,7 +14,6 @@ OUT_DIR = BASE / "ResultScreenshot"
 OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 TPL = {
-    # "mall_icon":   Template(r"Screenshot\mall_icon.png", record_pos=(0.335, 0.814),  resolution=(564, 1046)),
     "mall_icon":   Template(str(SHOT_DIR/"mall_icon.png"), record_pos=(0.335, 0.814),  resolution=(564, 1046)),
     "goods_card":  Template(str(SHOT_DIR/"goods_card.png"), record_pos=(-0.115, -0.491), resolution=(564, 1046)),
     "goods_open":  Template(str(SHOT_DIR/"goods_open.png"), record_pos=(-0.23, -0.083),  resolution=(564, 1046)),
