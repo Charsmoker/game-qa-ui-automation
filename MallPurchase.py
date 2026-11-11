@@ -28,12 +28,11 @@ def connect_wechat_mini_program(keyword="军棋"):
 
 if connect_wechat_mini_program():
     auto_setup(__file__)
-    touch(Template(r"tpl1794314774787.png", record_pos=(0.335, 0.814), resolution=(564, 1046)))
-    touch(Template(r"tpl1794314850626.png", record_pos=(-0.115, -0.491), resolution=(564, 1046)))
-    touch(Template(r"tpl1794314857616.png", record_pos=(-0.23, -0.083), resolution=(564, 1046)))
-    touch(Template(r"tpl1794314933796.png", record_pos=(-0.002, 0.238), resolution=(564, 1046)))
-
-    touch(Template(r"tpl1794314882511.png", record_pos=(0.005, 0.619), resolution=(564, 1046)))
-    touch(Template(r"tpl1794314888551.png", record_pos=(0.337, -0.486), resolution=(564, 1046)))
-    touch(Template(r"tpl1794314896096.png", record_pos=(-0.417, -0.683), resolution=(564, 1046)))
+    touch(Template(r"Screenshot\tpl1794314774787.png", record_pos=(0.335, 0.814), resolution=(564, 1046)))
+    touch(Template(r"Screenshot\tpl1794314850626.png", record_pos=(-0.115, -0.491), resolution=(564, 1046)))
+    touch(Template(r"Screenshot\tpl1794314857616.png", record_pos=(-0.23, -0.083), resolution=(564, 1046)))
+    touch(Template(r"Screenshot\tpl1794314933796.png", record_pos=(-0.002, 0.238), resolution=(564, 1046)))
+    touch(Template(r"Screenshot\tpl1794314882511.png", record_pos=(0.005, 0.619), resolution=(564, 1046)))
+    touch(Template(r"Screenshot\tpl1794314888551.png", record_pos=(0.337, -0.486), resolution=(564, 1046)))
+    touch(Template(r"Screenshot\tpl1794314896096.png", record_pos=(-0.417, -0.683), resolution=(564, 1046)))
 
