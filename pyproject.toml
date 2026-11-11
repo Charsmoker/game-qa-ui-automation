@@ -1,0 +1,12 @@
+[project]
+name = "uiautomation"
+version = "0.1.0"
+description = "一个游戏的UI自动化脚本的相关依赖"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "airtest>=1.4.3",
+    "pywin32>=312",
+    "pywinauto>=0.6.3",
+    "requests>=2.34.2",
+]
