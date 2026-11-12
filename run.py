@@ -10,8 +10,9 @@ import sys
 import logging
 import time
 from airtest.core.api import auto_setup
-from device import connect_mini_program
-from flow_mall import buy_in_mall
+from src.flows import buy_in_mall
+from src.device import connect_mini_program
+
 
 
 logger = logging.getLogger(__name__)
