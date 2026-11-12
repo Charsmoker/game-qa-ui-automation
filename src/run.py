@@ -12,7 +12,7 @@ import time
 from airtest.core.api import auto_setup
 from src.flows import buy_in_mall
 from src.device import connect_mini_program
-
+from src.paths import OUT_DIR
 
 
 logger = logging.getLogger(__name__)
@@ -24,6 +24,9 @@ def main():
         format="%(asctime)s [%(levelname)s] %(name)s:%(lineno)d %(message)s",
         )
     logger.info("开始执行商城购买冒烟。。。")
+
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+
     start = time.time()
 
     auto_setup(__file__)

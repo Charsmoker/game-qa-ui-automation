@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# @FileName  :device.py
+# @FileName  :window.py
 # @Time      :2026/11/11 21:00:34
 # @Author    :Lucas
 

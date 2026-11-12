@@ -15,8 +15,9 @@ uv sync
 先打开小程序窗口，然后：
 
 ```powershell
-uv run run.py
+python -m src.run
 ```
+注意：命令需在项目根目录执行。
 
 退出码 0 = 通过，1 = 失败。截图输出在 `ResultScreenshot/`。
 
@@ -24,6 +25,8 @@ uv run run.py
 
 ## 结构
 
-- `device.py`：连接微信小程序窗口
-- `flow_mall.py`：商城购买业务流程与检查点
-- `run.py`：入口、日志、退出码
+- `src/run.py`：入口、日志、退出码
+- `src/device/window.py`：连接微信小程序窗口
+- `src/flows/flow_mall.py`：商城购买业务流程与检查点
+- `src/paths.py`：集中管理项目路径
+

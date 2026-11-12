@@ -6,4 +6,4 @@
 # @Author    :Lucas
 
 
-from .device import connect_mini_program
+from .window import connect_mini_program, WindowNotFoundError
