@@ -6,13 +6,8 @@
 # @Author    :Lucas
 
 from airtest.core.api import touch, Template, snapshot, assert_exists
-from pathlib import Path
-from paths import SHOT_DIR, OUT_DIR
+from src.paths import SHOT_DIR, OUT_DIR
 
-# BASE = Path(__file__).resolve().parent
-# SHOT_DIR = BASE / "Screenshot"
-# OUT_DIR = BASE / "ResultScreenshot"
-# OUT_DIR.mkdir(parents=True, exist_ok=True)
 
 TPL = {
     "mall_icon":   Template(str(SHOT_DIR/"mall_icon.png"), record_pos=(0.335, 0.814),  resolution=(564, 1046)),

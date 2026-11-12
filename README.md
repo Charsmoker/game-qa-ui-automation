@@ -15,7 +15,7 @@ uv sync
 先打开小程序窗口，然后：
 
 ```powershell
-python -m src.run
+uv run python -m src.run
 ```
 注意：命令需在项目根目录执行。
 
