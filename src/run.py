@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# -*- encoding: utf-8 -*-
+# -*- coding: utf-8 -*-
 
 # @FileName  :run.py
 # @Time      :2026/11/11 21:02:43
@@ -22,7 +22,7 @@ def main():
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s [%(levelname)s] %(name)s:%(lineno)d %(message)s",
-        )
+    )
     logger.info("开始执行商城购买冒烟。。。")
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)
@@ -38,6 +38,7 @@ def main():
     except Exception:
         logger.exception("冒烟失败, 耗时: %.1fs", time.time() - start)
         return 1
+
 
 if __name__ == "__main__":
     sys.exit(main())
