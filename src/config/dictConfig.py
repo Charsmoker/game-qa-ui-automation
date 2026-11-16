@@ -49,9 +49,9 @@ LOG_SETTING = {
     }
 
 
-def init_logger(log_file_path: str = None):
+def init_logger(log_file_path: str | None = None):
     """
-    :param log_file_path: 日志文件完整路径；不传默认在启动目录下 RunningLog/UIAutoMation_*.log
+    :param log_file_path: 日志文件完整路径；不传默认在启动目录下 RunningLog/UIAutoMation.log
     """
     if log_file_path is None:
         log_file_path = str(RUNNING_LOG_DIR / "UIAutoMation.log")
