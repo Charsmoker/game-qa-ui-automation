@@ -12,17 +12,15 @@ import time
 from airtest.core.api import auto_setup
 from src.flows import buy_in_mall
 from src.device import connect_mini_program
-from src.paths import OUT_DIR
+from src.paths import OUT_DIR, RUNNING_LOG_DIR
+from src.config.dictConfig import init_logger
 
 
+init_logger(log_file_path= str(RUNNING_LOG_DIR / "UIAutoMation.log"))
 logger = logging.getLogger(__name__)
 
 
 def main():
-    logging.basicConfig(
-        level=logging.INFO,
-        format="%(asctime)s [%(levelname)s] %(name)s:%(lineno)d %(message)s",
-    )
     logger.info("开始执行商城购买冒烟。。。")
 
     OUT_DIR.mkdir(parents=True, exist_ok=True)

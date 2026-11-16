@@ -12,3 +12,4 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]   # src -> 项目根
 SHOT_DIR = ROOT / "Screenshot"
 OUT_DIR = ROOT / "ResultScreenshot"
+RUNNING_LOG_DIR = ROOT / "RunningLog"
