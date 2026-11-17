@@ -5,9 +5,14 @@
 # @Time      :2026/11/11 21:05:50
 # @Author    :Lucas
 
-from airtest.core.api import touch, Template, snapshot, assert_exists
-from src.paths import SHOT_DIR, OUT_DIR
+import logging
 
+from airtest.core.api import touch, Template, snapshot, assert_exists
+from airtest.core.error import TargetNotFoundError
+from src.paths import SHOT_DIR, OUT_DIR
+from src.errors import ElementNotFoundError
+
+logger = logging.getLogger(__name__)
 
 TPL = {
     "mall_icon":   Template(str(SHOT_DIR/"mall_icon.png"), record_pos=(0.335, 0.814),  resolution=(564, 1046)),
@@ -19,21 +24,40 @@ TPL = {
     "back_home":   Template(str(SHOT_DIR/"back_home.png"), record_pos=(-0.417, -0.683), resolution=(564, 1046)),
 }
 
+def _tap(name: str) -> None:
+    """点击指定的控件
+    点击模板元素；找不到时转成 ElementNotFoundError，并带上元素名。
+    """
+    try:
+        touch(TPL[name])
+    except TargetNotFoundError as e:
+        raise ElementNotFoundError(f"未找到控件: {name}") from e
+
+def _check_exists(name: str, msg: str) -> None:
+    """
+    检查指定的控件是否存在
+    断言元素存在；失败时转成 ElementNotFoundError。
+    """
+    try:
+        assert_exists(TPL[name], msg)
+    except (AssertionError, TargetNotFoundError) as e:
+        raise ElementNotFoundError(f"{msg} （元素: {name}）") from e
+
 def buy_in_mall():
     # ① 进入商城
-    touch(TPL["mall_icon"])
-    assert_exists(TPL["goods_card"], "未进入商城：商品列表不存在")
+    _tap("mall_icon")
+    _check_exists("goods_card", "未进入商城：商品列表不存在")
     snapshot(str(OUT_DIR/"01_Mall.png"))
     # ② 选商品进详情
-    touch(TPL["goods_card"])
-    touch(TPL["goods_open"])
-    assert_exists(TPL["buy_btn"], "未进入商品详情：购买按钮不存在")
+    _tap("goods_card")
+    _tap("goods_open")
+    _check_exists("buy_btn", "未进入商品详情：购买按钮不存在")
     snapshot(str(OUT_DIR/"02_Details.png"))
 
     # ③ 购买并确认
-    touch(TPL["buy_btn"])
-    touch(TPL["pay_confirm"])
-    assert_exists(TPL["pay_ok"], "购买失败：未出现成功提示")
+    _tap("buy_btn")
+    _tap("pay_confirm")
+    _check_exists("pay_ok", "购买失败：未出现成功提示")
     snapshot(str(OUT_DIR/"03_Buy_Success.png"))
 
-    touch(TPL["back_home"])
+    _tap("back_home")
