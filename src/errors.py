@@ -47,3 +47,11 @@ class ConfigError(EnvError):
     自动映射成退出码 2（环境问题），不需要改任何分支逻辑。
     """
     pass
+
+
+class ScriptError(AutoTestError):
+    """测试脚本自身的问题：元素名未定义、参数类型不对、少写了步骤。
+
+    这类错误重跑没用，改代码才有用。
+    """
+    pass

@@ -15,7 +15,7 @@ from airtest.core.api import auto_setup
 from src.config.dictConfig import init_logger
 from src.config.settings import load_setting
 from src.device import connect_mini_program
-from src.errors import ConfigError, EnvError, FlowError
+from src.errors import ConfigError, EnvError, FlowError, ScriptError
 from src.flows import buy_in_mall
 
 
@@ -60,6 +60,9 @@ def main():
     except FlowError as e:
         logger.exception("流程异常、失败: %s", e)
         code = 1
+    except ScriptError as e:
+        logger.error("脚本错误：%s", e)
+        code = 3
     except Exception as e:
         logger.exception("未知异常: %s", e)
         code = 3

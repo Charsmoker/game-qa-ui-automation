@@ -11,7 +11,7 @@ from airtest.core.api import touch, Template, snapshot, assert_exists
 from airtest.core.error import TargetNotFoundError
 
 from src.paths import SHOT_DIR
-from src.errors import ElementNotFoundError
+from src.errors import ElementNotFoundError, ScriptError
 from src.common.step import step
 
 
@@ -26,12 +26,19 @@ TPL = {
     "exit_btn": Template(str(SHOT_DIR/"exit_btn.png"), record_pos=(-0.002, 0.238), resolution=(564, 1046)),
 }
 
+def _get(name: str) -> Template:
+    """按名字取模板；名字不存在时给出可用列表，而不是裸 KeyError。"""
+    try:
+        return TPL[name]
+    except KeyError:
+        raise ScriptError(f"元素名未定义：{name}\n可用元素：{sorted(TPL)}") from None
+
 def _tap(name: str) -> None:
     """点击指定的控件
     点击模板元素；找不到时转成 ElementNotFoundError，并带上元素名。
     """
     try:
-        touch(TPL[name])
+        touch(_get(name))
     except TargetNotFoundError as e:
         raise ElementNotFoundError(f"未找到控件: {name}") from e
 
@@ -41,7 +48,7 @@ def _check_exists(name: str, msg: str) -> None:
     断言元素存在；失败时转成 ElementNotFoundError。
     """
     try:
-        assert_exists(TPL[name], msg)
+        assert_exists(_get(name), msg)
     except (AssertionError, TargetNotFoundError) as e:
         raise ElementNotFoundError(f"{msg} （元素: {name}）") from e
 
