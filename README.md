@@ -10,6 +10,14 @@ Python >= 3.11，Windows（依赖 pywinauto 找窗口）
 uv sync
 ```
 
+## 配置
+
+首次运行前复制配置模板：
+
+```powershell
+Copy-Item config.example.yaml config.yaml
+```
+
 ## 运行
 
 先打开小程序窗口，然后：
@@ -29,4 +37,4 @@ uv run python -m src.run
 - `src/device/window.py`：连接微信小程序窗口
 - `src/flows/flow_mall.py`：商城购买业务流程与检查点
 - `src/paths.py`：集中管理项目路径
-
+- `src\errors.py`：错误类型

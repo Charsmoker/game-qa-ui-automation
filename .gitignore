@@ -6,3 +6,4 @@ ResultScreenshot/
 .pytest_cache/
 RunningLog/
 *.log
+config.yaml

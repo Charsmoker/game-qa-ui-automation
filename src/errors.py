@@ -38,3 +38,12 @@ class ElementNotFoundError(FlowError):
     属于“测试资产要维护”，而不是“环境没准备好”。
     """
     pass
+
+
+class ConfigError(EnvError):
+    """配置文件缺失、YAML 语法错误或字段校验失败。
+
+    继承 EnvError，所以 run.py 里现有的 except EnvError 会接住它，
+    自动映射成退出码 2（环境问题），不需要改任何分支逻辑。
+    """
+    pass
