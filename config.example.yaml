@@ -1,0 +1,16 @@
+# 微信小程序商城购买冒烟 —— 运行配置
+# 相对路径以项目根目录为基准，也可以写绝对路径。
+
+device:
+  keyword: 军棋              # 窗口标题中包含的关键字
+  timeout: 30                # 查找窗口的超时（秒），1~600
+
+paths:
+  output_dir: ResultScreenshot   # 截图输出目录
+  running_log_dir: RunningLog            # 日志目录
+
+logging:
+  console_level: INFO        # DEBUG / INFO / WARNING / ERROR
+  file_level: DEBUG
+  backup_days: 7             # 按天滚动，保留天数
+  encoding: utf-8

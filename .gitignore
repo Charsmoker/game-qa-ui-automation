@@ -4,4 +4,6 @@ __pycache__/
 log/
 ResultScreenshot/
 .pytest_cache/
+RunningLog/
 *.log
+config.yaml

@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# @FileName  :device.py
+# @FileName  :window.py
 # @Time      :2026/11/11 21:00:34
 # @Author    :Lucas
 
 import time
 import logging
+from src.errors import EnvError
 
 logger = logging.getLogger(__name__)
 
 
-class WindowNotFoundError(Exception):
-    """Raised when a window is not found."""
+class WindowNotFoundError(EnvError):
+    """窗口没找到 —— 环境问题，不是被测功能的问题。"""
     pass
 
 
