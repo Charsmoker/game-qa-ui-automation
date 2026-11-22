@@ -14,7 +14,6 @@ from src.paths import SHOT_DIR
 from src.errors import ElementNotFoundError
 from src.common.step import step
 
-# logger = logging.getLogger(__name__)
 
 TPL = {
     "mall_icon":   Template(str(SHOT_DIR/"mall_icon.png"), record_pos=(0.335, 0.814),  resolution=(564, 1046)),
@@ -70,7 +69,7 @@ def buy_in_mall(out_dir: Path) -> None:
         # _tap("pay_confirm")
         _tap("exit_btn")
         _tap("myBag")
-        _check_exists("myBag", "购买失败：未出现成功提示")
+        _check_exists("myBag", "切换失败，找不到背包页签")
         snapshot(str(out_dir/"03_Buy_Success.png"))
     # ④ 返回首页
     with step("返回首页"):

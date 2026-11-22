@@ -76,7 +76,7 @@ def load_setting(path: Path | None = None) -> Settings:
     cfg_path = path or CONFIG_FILE
 
     # ① 文件不存在
-    if  not cfg_path.is_file():
+    if not cfg_path.is_file():
         raise ConfigError(
             f"配置文件不存在：{cfg_path}\n"
             f"提示：在项目根目录执行 `Copy-Item config.example.yaml config.yaml`"

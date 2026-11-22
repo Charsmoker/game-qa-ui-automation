@@ -24,11 +24,11 @@ def step(name: str):
             _check_exists("goods_card", "未进入商城：商品列表不存在")
     """
     start = time.perf_counter()
-    logger.info("▶ %s", name)
+    logger.info("[步骤] %s", name)
     try:
         yield
     except Exception:
-        logger.exception("❌ %s 失败: %2fs", name, time.perf_counter() - start)
+        logger.exception("[失败] %s (%.2fs)", name, time.perf_counter() - start)
         raise
     else:
-        logger.info("✅ %s 成功 (耗时 %.2fs)", name, time.perf_counter() - start)
+        logger.info("[完成] %s (%.2fs)", name, time.perf_counter() - start)
