@@ -69,6 +69,7 @@ def main():
     else:
         logger.info("商城购买冒烟执行成功！")
     finally:
+        logger.info("退出码: %d（0=通过 1=流程失败 2=环境 3=脚本错误）", code)
         logger.info("商城购买冒烟执行结束，耗时 %.2fs", time.time() - start)
 
     return code

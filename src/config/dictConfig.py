@@ -11,7 +11,7 @@ import logging.config
 from pathlib import Path
 
 from src.config.settings import LoggingConfig
-from src.paths import RUNNING_LOG_DIR
+from src.paths import DEFAULT_LOG_DIR 
 
 LOG_SETTING ={
     "version": 1,
@@ -35,14 +35,17 @@ LOG_SETTING ={
             "class": "logging.handlers.TimedRotatingFileHandler",
             "formatter": "file_fmt",
             "level": "DEBUG",
-            "filename": str(RUNNING_LOG_DIR / "UIAutoMation.log"),   # 占位，实际由入参覆盖
+            "filename": str(DEFAULT_LOG_DIR  / "UIAutoMation.log"),   # 占位，实际由入参覆盖
             "when": "D",
             "interval": 1,
             "backupCount": 7,
             "encoding": "utf-8",
         },
     },
-    "root": {"handlers": ["console", "file"], "level": "DEBUG"},
+    "root": {
+        "handlers": ["console", "file"], 
+        "level": "DEBUG"
+    },
 }
 
 

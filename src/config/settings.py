@@ -17,7 +17,7 @@ import yaml
 from pydantic import BaseModel, ConfigDict, Field, ValidationError, model_validator
 
 from src.errors import ConfigError
-from src.paths import ROOT, OUT_DIR, RUNNING_LOG_DIR
+from src.paths import ROOT, DEFAULT_OUT_DIR , DEFAULT_LOG_DIR 
 
 CONFIG_FILE = ROOT / "config.yaml"
 
@@ -36,8 +36,8 @@ class DeviceConfig(BaseModel):
 class PathsConfig(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
-    output_dir: Path = Field(default=OUT_DIR, description="截图输出目录")
-    running_log_dir: Path = Field(default=RUNNING_LOG_DIR, description="运行日志目录")
+    output_dir: Path = Field(default=DEFAULT_OUT_DIR , description="截图输出目录")
+    running_log_dir: Path = Field(default=DEFAULT_LOG_DIR , description="运行日志目录")
 
     @model_validator(mode="after")
     def _to_absolute(self) -> "PathsConfig":

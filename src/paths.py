@@ -10,6 +10,9 @@
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]   # src -> 项目根
-SHOT_DIR = ROOT / "Screenshot"
-OUT_DIR = ROOT / "ResultScreenshot"
-RUNNING_LOG_DIR = ROOT / "RunningLog"
+
+SHOT_DIR = ROOT / "Screenshot"               # 测试资产，固定，不进配置
+
+# 下面两个只是「兜底默认值」：config.yaml 写了就以配置为准
+DEFAULT_OUT_DIR  = ROOT / "ResultScreenshot"
+DEFAULT_LOG_DIR  = ROOT / "RunningLog"
